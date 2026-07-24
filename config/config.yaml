@@ -1,0 +1,36 @@
+app:
+  name: "Mutual Fund Analytics Platform"
+  version: "1.0.0"
+  environment: "development"
+  debug: true
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  database_dir: "data/database"
+  database_path: "data/database/mutual_funds.db"
+  logs_dir: "logs"
+  log_file: "logs/app.log"
+
+api:
+  amfi_nav_url: "https://www.amfiindia.com/spages/NAVAll.txt"
+  mfapi_base_url: "https://api.mfapi.in/mf"
+  timeout_seconds: 30
+  retry_attempts: 3
+  backoff_factor: 2.0
+
+database:
+  db_type: "sqlite" # options: sqlite, postgresql
+  echo_sql: false
+  pool_size: 5
+
+logging:
+  level: "INFO" # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s | %(levelname)-8s | %(name)s:%(funcName)s:%(lineno)d - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  rotation_max_bytes: 10485760 # 10 MB
+  backup_count: 5
+
+financial_defaults:
+  risk_free_rate: 0.065 # 6.5% Risk Free Rate (Standard RBI 10Y G-Sec Yield)
+  trading_days_per_year: 252

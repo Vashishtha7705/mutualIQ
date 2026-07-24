@@ -1,0 +1,16 @@
+# Core Data Engineering & Analytics
+pandas>=2.1.0
+numpy>=1.26.0
+scipy>=1.11.0
+pyyaml>=6.0.1
+pydantic>=2.5.0
+requests>=2.31.0
+sqlalchemy>=2.0.0
+
+# Interactive Visualization & Dashboarding
+streamlit>=1.31.0
+plotly>=5.18.0
+
+# Testing & Quality Assurance
+pytest>=8.0.0
+pytest-cov>=4.1.0
